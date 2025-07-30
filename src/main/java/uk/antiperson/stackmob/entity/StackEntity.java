@@ -86,7 +86,9 @@ public class StackEntity {
         entityManager.unregisterStackedEntity(this);
         if (!isSingle()) {
             getTag().update();
-            getDisplayTag().remove();
+            if (getDisplayTag().exists()) {
+                getDisplayTag().remove();
+            }
         }
     }
 
