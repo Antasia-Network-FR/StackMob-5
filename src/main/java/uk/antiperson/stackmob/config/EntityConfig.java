@@ -82,7 +82,8 @@ public class EntityConfig {
     }
 
     public int getMaxStack() {
-        return getInt("stack.max-size");
+        int configValue = getInt("stack.max-size");
+        return configValue == -1 ? Integer.MAX_VALUE : configValue;
     }
 
     public boolean getStackThresholdEnabled() {
