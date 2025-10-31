@@ -4,7 +4,6 @@ import net.kyori.adventure.text.Component;
 import org.bukkit.Location;
 import org.bukkit.entity.Display;
 import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Player;
 import org.bukkit.entity.TextDisplay;
 import uk.antiperson.stackmob.StackMob;
 import uk.antiperson.stackmob.entity.StackEntity;
@@ -32,6 +31,7 @@ public class DisplayTag {
             float multiplier = stackEntity.getEntityConfig().getTagNearbyRadius() / readTrackingRange();
             display.setViewRange(multiplier);
         }
+        display.setSeeThrough(true);
         display.setPersistent(false);
         updateName(stackEntity.getTag().getDisplayName());
     }
